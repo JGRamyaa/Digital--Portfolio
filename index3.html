@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+        header {
+            background-color: #8BC34A;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .hero {
+            background-image: url('photo.jgp.jpg');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero button {
+            background-color: #FFC107;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .services ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .services li {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            margin: 1rem;
+        }
+        .testimonials blockquote {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            margin: 1rem;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid #ddd;
+        }
+        .contact button {
+            background-color: #FFC107;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #8BC34A;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PetPal</h1>
+        <p>Love, Care, Protect</p>
+        <p>Your Pet's Best Friend</p>
+    </header>
+    <main>
+        <section class="hero" style="background-image: url('photo.jpg.jpeg');">
+            <button>Book Now</button>
+        </section>
+        <section class="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Pet Grooming</li>
+                <li>Pet Walking</li>
+                <li>Pet Sitting</li>
+                <li>Veterinary Care</li>
+            </ul>
+        </section>
+        <section class="testimonials">
+            <h2>Testimonials</h2>
+            <blockquote>
+                <p>"PetPal took great care of my furry friend!" - Rachel</p>
+            </blockquote>
+            <blockquote>
+                <p>"Professional and compassionate service!" - John</p>
+            </blockquote>
+        </section>
+        <center>
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <p>Phone: +91 9876543210</p>
+                <p>Email: <a href="mailto:info@petpal.com">info@petpal.com</a></p>
+                <p>Address: 123 Pet Street, Petville, USA</p>
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <button>Send</button>
+                </form>
+            </section>
+        </center>
+    </main>
+    <footer>
+        <p>&copy; 2024 PetPal</p>
+    </footer>
+    <script>
+        document.querySelector('.hero button').addEventListener('click', () => {
+            alert('Thank you for choosing PetPal!');
+        });
+    </script>
+</body>
+</html>
+```

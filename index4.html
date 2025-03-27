@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #display {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: right;
+            border: none;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+        
+        button {
+            height: 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button id="clear">C</button>
+            <button id="backspace">DEL</button>
+            <button id="equals">=</button>
+            <button id="divide">/</button>
+            <button id="multiply">*</button>
+            <button id="subtract">-</button>
+            <button id="add">+</button>
+            <button id="zero">0</button>
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+            <button id="decimal">.</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
+
+        let currentNumber = '';
+        let previousNumber = '';
+        let operation = '';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.textContent;
+
+                switch (value) {
+                    case 'C':
+                        clearDisplay();
+                        break;
+                    case 'DEL':
+                        deleteLastDigit();
+                        break;
+                    case '=':
+                        calculateResult();
+                        break;
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                        setOperation(value);
+                        break;
+                    default:
+                        appendNumber(value);
+                }
+            });
+        });
+
+        function clearDisplay() {
+            display.value = '';
+            currentNumber = '';
+            previousNumber = '';
+            operation = '';
+        }
+
+        function deleteLastDigit() {
+            currentNumber = currentNumber.slice(0, -1);
+            display.value = currentNumber;
+        }
+
+        function calculateResult() {
+            const result = eval(`${previousNumber} ${operation} ${currentNumber}`);
+            display.value = result;
+            currentNumber = result.toString();
+            previousNumber = '';
+            operation = '';
+        }
+
+        function setOperation(op) {
+            previousNumber = currentNumber;
+            operation = op;
+            currentNumber = '';
+        }
+
+        function appendNumber(num) {
+            currentNumber += num;
+            display.value = currentNumber;
+        }
+    </script>
+</body>
+</html>
+```
